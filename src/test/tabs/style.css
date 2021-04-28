@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    height: 44px;
+    line-height: 44px;
+}
+.tab-item {
+   flex: 1;
+   text-align: center;
+}
+.title-value{
+    padding: 5px 8px;
+}
+.tab-item.active .title-value {
+   border-bottom: 3px solid red;
+}
+.tab-item.active {
+    color: red;
+}
