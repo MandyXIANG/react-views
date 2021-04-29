@@ -6,7 +6,8 @@ export default class Home extends PureComponent {
             <div>
                 <h2 className={ homeStyle.title }>我是Home组件</h2>
                 <div className="banner">
-                    <span>我是轮播图</span>
+                    <span>我是轮播图1</span>
+                    <span>我是轮播图2</span>
                 </div>
             </div>
         )
