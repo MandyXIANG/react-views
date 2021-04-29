@@ -40,6 +40,7 @@ export default class Home extends PureComponent {
                     <span>我是轮播图1</span>
                     <span className="active">我是轮播图2</span>
                     <span>我是轮播图3</span>
+                    <span>我是轮播图4</span>
                 </div>
             </HomeWrapper>
         )
