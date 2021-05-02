@@ -1,8 +1,33 @@
 import React, { PureComponent } from 'react';
 
+// ThemeProvider // 增加主题颜色
+
+import styled, { ThemeProvider } from 'styled-components';
+
 
 import Home from './home';
 import Profile from './profile';
+
+const HYButton = styled.button`
+    color: purple;
+    padding: 10px 20px; // 公共样式
+    border-color: red; // 公共样式
+`
+
+// const HYpRrimaryButton = styled.button`
+//     padding: 10px 20px; // 公共样式
+//     color: white;
+//     background-color: green;
+//     border-color: red; // 公共样式
+// `
+
+// 采用继承CSS的方式,调用函数的方式
+const HYpRrimaryButton = styled(HYButton)`
+    color: white;
+    background-color: green;
+    /* padding: 10px 20px;// 公共样式  可以省略 */
+    /* border-color: red; // 公共样式 可以省略*/
+`
 
 export default class App extends PureComponent {
     constructor(props) {
@@ -19,10 +44,13 @@ export default class App extends PureComponent {
     }
     render() {
         return (
-            <div>
+            <ThemeProvider theme={{ themeColor: "yellow", fontSize: "30px" }}>
                 <Home/>
+                <hr/>
                 <Profile/>
-            </div>
+                <HYButton>我是普通的按钮</HYButton>
+                <HYpRrimaryButton>我是基础按钮</HYpRrimaryButton>
+            </ThemeProvider>
         )
     }
 
