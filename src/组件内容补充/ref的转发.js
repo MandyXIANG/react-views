@@ -13,6 +13,7 @@ class Home extends PureComponent {
     }
 }
 
+// 函数式组件中没有示例，不能获取到对应的组件示例，
 // 获取函数式组件中某个元素的DOM 通过forwardRef高阶函数 传入ref
 const About = forwardRef(function About(props, ref) {
     return (
