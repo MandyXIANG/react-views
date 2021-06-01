@@ -8,7 +8,7 @@ class Modal extends PureComponent {
         console.log(this.props.children)
         return ReactDom.createPortal(
             this.props.children,
-            document.getElementById("modal")
+            document.getElementById("")
         )
     }
 }

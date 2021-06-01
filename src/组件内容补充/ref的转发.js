@@ -1,4 +1,5 @@
 import React, { PureComponent, createRef, forwardRef } from 'react'
+import request from '../axios/server'
 
 class Home extends PureComponent {
     render() {
@@ -50,5 +51,16 @@ export default class App extends PureComponent {
         console.log('正常', this.titleRef.current)
         console.log('对象', this.homeRef.current)
         console.log('函数', this.aboutRef.current)
+        request({
+            url: 'get',
+            params: {
+                name: 'mandy',
+                age: 12
+            }
+        }).then(
+            console.log
+        )
     }
+
+    
 }

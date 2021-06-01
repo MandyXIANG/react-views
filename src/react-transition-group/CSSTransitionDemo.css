@@ -1,0 +1,24 @@
+.card-enter {
+    opacity: 0;
+}
+
+.card-enter-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+/* 初始状态 */
+.card-exit {
+    opacity: 1;
+}
+
+/* 执行中 */
+.card-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+/* 执行完毕 */
+.card-exit-done {
+    opacity: 0;
+}
