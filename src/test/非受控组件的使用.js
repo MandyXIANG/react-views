@@ -1,5 +1,6 @@
 import React, { createRef, PureComponent, } from 'react'
 
+// 使用React.createRef() 创建ref对象， 通过ref对象来获取值
 export default class App extends PureComponent {
     constructor() {
         super();

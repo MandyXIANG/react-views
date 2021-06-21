@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 
+// 只能通过setState() 来改变元素
 export default class App extends PureComponent {
     constructor() {
         super();

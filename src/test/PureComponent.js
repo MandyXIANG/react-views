@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 
+// 应用场景： 如果所有的类都需要现 shouldComponentUpdate来判断是否需要更新，增加工作量
 class Header extends PureComponent {
         render () {
             console.log('header调用')

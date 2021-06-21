@@ -18,7 +18,7 @@ const MemoHeader = memo (
 // 类组件使用PureComponent
 class Main extends PureComponent {
     render () {
-        console.log('footer的调用')
+        console.log('Main的调用')
         return (
             <div>
                 <span>我是Main</span>
@@ -28,11 +28,13 @@ class Main extends PureComponent {
 }
 
 const MeonFooter = memo(
-    function Footer () {
-    console.log('我是footer')
+    function Footer (props) {
+    console.log('Footer调用')
+    const { changeFooterCount } = props
     return (
         <div>
             <div>我是Footer</div>
+            <button onClick={e => changeFooterCount(10)}>点我加1</button>
         </div>
     )
 }
@@ -43,7 +45,8 @@ export default class App extends PureComponent {
         super(props);
         this.state = {
             count: 0,
-            msg: 'mandy'
+            msg: 'mandy',
+            value: 0
         }
     }
     render () {
@@ -52,15 +55,21 @@ export default class App extends PureComponent {
             <div>
                 <h2>当前计数： {this.state.count}</h2>
                 <h2>{this.state.msg}</h2>
-                <button onClick={e => this.changeCount()}>点击1</button>
+                <h3>{this.state.value}</h3>
+                <button onClick={e => this.changeCount()}>点击加1111</button>
                 <Main/>
                 <MemoHeader/>
-                <MeonFooter/>
+                <MeonFooter changeFooterCount={e => this.addValue(e)}/>
             </div>
         )
     }
 
     changeCount () {
         this.setState({ count: this.state.count + 1 })
+    }
+
+    addValue(val) {
+        console.log('val的值', val)
+        this.setState({value: val + this.state.value})
     }
 }

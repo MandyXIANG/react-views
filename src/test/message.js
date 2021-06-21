@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 ChildMsg.propTypes = {
@@ -34,7 +34,7 @@ function ChildMsg (props) {
 }
 
 // 类组件
-class ChildTest extends Component {
+class ChildTest extends PureComponent {
     constructor (props) {
         super(props)
         console.log(this.props)
@@ -64,7 +64,13 @@ class ChildTest extends Component {
 
 
 
-export default class Message extends Component {
+export default class Message extends PureComponent {
+    // 举个栗子
+    componentDidMount() {
+        console.log(111)
+        let arr = [[1, 2], [3,4], [5, [6], 7]]
+        console.log(arr.flat(Infinity))
+    }
     render () {
         return (
             <div>
